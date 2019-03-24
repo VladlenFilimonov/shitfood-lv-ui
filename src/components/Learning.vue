@@ -32,33 +32,33 @@
 </template>
 
 <script>
-  export default {
-    componentName: 'Skills',
-    data() {
-      return {
-        skills: [
-          {skill: 'Vue.js'},
-          {skill: 'Java'},
-          {skill: 'C++'}
-        ]
-      }
+export default {
+  componentName: 'Skills',
+  data() {
+    return {
+      skills: [
+        {skill: 'Vue.js'},
+        {skill: 'Java'},
+        {skill: 'C++'}
+      ]
+    }
+  },
+  methods: {
+    addSkill() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.skills.push({skill: this.skills.skill})
+          this.skills.skill = ''
+        } else {
+          alert('Not valid')
+        }
+      })
     },
-    methods: {
-      addSkill() {
-        this.$validator.validateAll().then((result) => {
-          if (result) {
-            this.skills.push({skill: this.skills.skill})
-            this.skills.skill = ''
-          } else {
-            alert('Not valid')
-          }
-        })
-      },
-      remove(id) {
-        this.skills.splice(id, 1)
-      }
+    remove(id) {
+      this.skills.splice(id, 1)
     }
   }
+}
 </script>
 
 <style scoped>

@@ -7,21 +7,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'Learning2',
-    data() {
-      return {
-        parameterName: this.$route.params.name,
-        buttonClicked: false
-      }
-    },
-    methods: {
-      clickButton() {
-        this.buttonClicked = !this.buttonClicked;
-      }
+export default {
+  name: 'Learning2',
+  data() {
+    return {
+      parameterName: this.$route.params.name,
+      buttonClicked: false
     }
-
+  },
+  methods: {
+    clickButton() {
+      this.buttonClicked = !this.buttonClicked;
+    }
   }
+
+}
 </script>
 
 <style scoped>
